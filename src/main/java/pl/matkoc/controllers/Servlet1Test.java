@@ -8,9 +8,11 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.logging.Logger;
 
 @WebServlet(name = "Servlet1Test", value = "/test1")
 public class Servlet1Test extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
