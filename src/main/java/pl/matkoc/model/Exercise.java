@@ -9,10 +9,10 @@ public class Exercise {
     public Exercise() {};
 
     public Exercise(String title, String description) {
-        if(title.isEmpty() || title.isBlank()){
+        if(title.length() == 0){
             throw new IllegalArgumentException("Tytuł nie może być pusty.");
         }
-        if(description.isBlank() || description.isEmpty()){
+        if(description.length() == 0){
             throw new IllegalArgumentException("Opis nie może być pusty.");
         }
         this.title = title;
@@ -35,7 +35,7 @@ public class Exercise {
     }
 
     public void setTitle(String title) {
-        if(title.isEmpty() || title.isBlank()){
+        if(title.length() == 0){
             throw new IllegalArgumentException("Tytuł nie może być pusty.");
         }
         this.title = title;
@@ -46,7 +46,7 @@ public class Exercise {
     }
 
     public void setDescription(String description) {
-        if(description.isBlank() || description.isEmpty()){
+        if(description.length() == 0){
             throw new IllegalArgumentException("Opis nie może być pusty.");
         }
         this.description = description;
