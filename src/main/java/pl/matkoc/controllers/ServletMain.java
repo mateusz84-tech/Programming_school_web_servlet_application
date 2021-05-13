@@ -16,9 +16,10 @@ public class ServletMain extends HttpServlet {
     protected void doGet(HttpServletRequest request,
                          HttpServletResponse response) throws ServletException, IOException {
 
-
-        request.setAttribute("solutions","napis");
-        getServletContext().getRequestDispatcher("/main.jsp")
+        SolutionDao solutionDao = new SolutionDao();
+        List<Solution> solutions = solutionDao.findAll();
+        request.setAttribute("solution",solutions);
+        getServletContext().getRequestDispatcher("/index.jsp")
                 .forward(request,response);
 
     }
