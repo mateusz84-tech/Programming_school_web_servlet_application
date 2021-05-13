@@ -9,9 +9,18 @@
 <html>
 <head>
     <title>Tytuł</title>
+    <meta charset="UTF-8"/>
 </head>
 <body>
+<header>Nagłówek szablonu
+    <nav>Menu nawigacyjne
+        <ul>
+            <li><a href="addExercise.jsp">Dodaj ćwiczenia</a></li>
+            <li><a href="">Kolejny link</a></li>
+        </ul>
+    </nav>
+</header>
 <h3>Strona główna</h3>
-<a href="${pageContext.request.contextPath}/addExercise.jsp">Dodaj ćwiczenie</a>
+
 </body>
 </html>
