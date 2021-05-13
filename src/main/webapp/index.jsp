@@ -84,7 +84,7 @@
         <img src="${pageContext.request.contextPath}img/header.jpg">
         <nav>
             <a href="${pageContext.request.contextPath}/group.jsp" class="menu">Grupy</a>
-            <a href="exercise.html" class="menu">Zadania</a>
+            <a href="exercise.jsp" class="menu">Zadania</a>
             <a href="#" class="menu">Użytkownicy</a>
             <a href="#" class="menu">Rozwiązania</a>
         </nav>
