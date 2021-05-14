@@ -23,15 +23,15 @@
             max-width: 1200px;
             height: 900px;
             margin: 0 auto;
-            background-color: rgb(211, 166, 166);
+            background-color: lightgray;
         }
         body{
-            background-color: cadetblue;
+            background-color: lightskyblue;
         }
         header img{
             width: 100%;
             display: block;
-            height: 350px;
+            height: 300px;
         }
         nav{
             background-color: rgb(149, 135, 240);

@@ -21,12 +21,11 @@
             max-width: 1200px;
             height: 900px;
             margin: 0 auto 0 auto;
-            background-color: rgb(211, 166, 166);
+            background-color: lightgray;
         }
         body{
-            background-color: cadetblue;
+            background-color: lightskyblue;
         }
-        /* określenie, że szerokość obrazka ma być zawsze full, responsywna */
         header img{
             width: 100%;
             display: block;
@@ -36,7 +35,7 @@
             background-color: rgb(149, 135, 240);
         }
         a.menu{
-            display: inline-block;  /* elementy widnieją jak liniowe ale są blokowymi, możemy nadać im szer. wys. itp*/
+            display: inline-block;
             width: 24%;
             padding: 15px 30px;
             color: white;
@@ -44,12 +43,9 @@
             text-align: center;
         }
         a.bottom{
-
             color: aliceblue;
             text-decoration: none;
-
         }
-        /* hover określa akcje na które najeżamy */
         a.menu:hover {
             background-color: crimson;
         }
@@ -81,12 +77,12 @@
 <body>
 <div id="wrapper">
     <header>
-        <img src="${pageContext.request.contextPath}img/header.jpg">
+        <img src="${pageContext.request.contextPath}/image/header.jpg" alt="header">
         <nav>
-            <a href="${pageContext.request.contextPath}/group.jsp" class="menu">Grupy</a>
+            <a href="group.jsp" class="menu">Grupy</a>
             <a href="exercise.jsp" class="menu">Zadania</a>
-            <a href="#" class="menu">Użytkownicy</a>
-            <a href="#" class="menu">Rozwiązania</a>
+            <a href="user.jsp" class="menu">Użytkownicy</a>
+            <a href="solution.jsp" class="menu">Rozwiązania</a>
         </nav>
     </header>
     <section>
