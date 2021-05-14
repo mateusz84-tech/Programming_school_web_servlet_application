@@ -6,7 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="for" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head lang="pl">
     <meta charset="UTF-8">
@@ -52,7 +52,6 @@
             color: blue;
         }
         table{
-            border: 1px solid balck;
             display:inline-block;
             width: 100%;
             text-align: center;
@@ -81,7 +80,7 @@
     <header>
         <img src="img/groupHeader.jpg" alt="">
         <nav>
-            <a href="#" class="menu">Dodaj</a>
+            <a href="/view_group/addGroup.jsp" class="menu">Dodaj</a>
             <a href="#" class="menu">Edytuj</a>
             <a href="#" class="menu">Lista grup</a>
             <a href="#" class="menu">Usuń</a>

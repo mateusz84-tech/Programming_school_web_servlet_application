@@ -77,7 +77,7 @@
 <body>
 <div id="wrapper">
     <header>
-        <img src="${pageContext.request.contextPath}/image/header.jpg" alt="header">
+        <img src="image/header.jpg" alt="header">
         <nav>
             <a href="group.jsp" class="menu">Grupy</a>
             <a href="exercise.jsp" class="menu">Zadania</a>
