@@ -81,7 +81,7 @@
         <img src="img/groupHeader.jpg" alt="">
         <nav>
             <a href="/view_group/addGroup.jsp" class="menu">Dodaj</a>
-            <a href="#" class="menu">Edytuj</a>
+            <a href="/editGroup" class="menu">Edytuj</a>
             <a href="#" class="menu">Lista grup</a>
             <a href="#" class="menu">Usuń</a>
         </nav>
