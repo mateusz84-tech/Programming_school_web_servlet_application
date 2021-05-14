@@ -26,7 +26,7 @@ public class AddGroupServlet extends HttpServlet {
         group.setName(name);
 
         groupDao.create(group);
-        response.sendRedirect("/group.jsp");
+        response.sendRedirect("/groupList");
 
     }
 }
