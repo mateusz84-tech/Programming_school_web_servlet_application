@@ -9,7 +9,7 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name = "ListGroupServlet", value = "/")
+@WebServlet(name = "ListGroupServlet", value = "/groupList")
 public class ListGroupServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request,
