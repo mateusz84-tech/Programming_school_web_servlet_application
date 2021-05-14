@@ -79,7 +79,7 @@
     <header>
         <img src="image/header.jpg" alt="header">
         <nav>
-            <a href="group.jsp" class="menu">Grupy</a>
+            <a href="/groupList" class="menu">Grupy</a>
             <a href="exercise.jsp" class="menu">Zadania</a>
             <a href="user.jsp" class="menu">Użytkownicy</a>
             <a href="solution.jsp" class="menu">Rozwiązania</a>
