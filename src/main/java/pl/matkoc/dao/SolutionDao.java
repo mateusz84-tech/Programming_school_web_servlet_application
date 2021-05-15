@@ -27,6 +27,8 @@ public class SolutionDao {
     // pobranie wszystkich rozwiązań danego zadania, posortowane od najnowszego
     private final String FIND_ALL_BY_EXERCISE_ID_QUERY =
             "SELECT * FROM solution  WHERE exercise_id = ? ORDER BY created DESC";
+    private final String GET_LAST_FIVE_SOLUTION =
+            "SELECT * FROM solution ORDER BY id_solution DESC LIMIT 5";
 
 
     public Solution create(Solution solution){
@@ -165,6 +167,28 @@ public class SolutionDao {
             exc.printStackTrace();
             return null;
         }
+    }
+    public List<Solution> findLastFiveSolution(){
+        List<Solution> lastFiveSolution = new ArrayList<>();
+        try(Connection connection = DBUtil.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(GET_LAST_FIVE_SOLUTION);
+            ResultSet resultSet = statement.executeQuery();
+            while(resultSet.next()){
+                Solution lastFive = new Solution();
+                lastFive.setId(resultSet.getInt("id_solution"));
+                lastFive.setCreated(resultSet.getTimestamp("created"));
+                lastFive.setUpdated(resultSet.getTimestamp("updated"));
+                lastFive.setDescription(resultSet.getString("description"));
+                lastFive.setExerciseId(resultSet.getInt("exercise_id"));
+                lastFive.setUserId(resultSet.getInt("user_id"));
+
+                lastFiveSolution.add(lastFive);
+            }
+        }catch (SQLException exc){
+            exc.printStackTrace();
+            return null;
+        }
+        return lastFiveSolution;
     }
 
 }
