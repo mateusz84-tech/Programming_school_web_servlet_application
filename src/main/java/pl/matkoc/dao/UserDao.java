@@ -23,6 +23,8 @@ public class UserDao {
             "SELECT * FROM users";
     private final String FIND_ALL_USERS_BY_GROUP_ID =
             "SELECT * FROM users WHERE user_group_id = ?";
+    private final String GET_LAST_FIVE_USER =
+            "SELECT * FROM users ORDER BY id_user DESC LIMIT 5";
 
 
     public User create(User user){
@@ -138,6 +140,28 @@ public class UserDao {
             exc.printStackTrace();
             return null;
         }
+    }
+
+    public List<User> findLastFiveUser(){
+        List<User> lastFiveUserList = new ArrayList<>();
+        try(Connection connection = DBUtil.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(GET_LAST_FIVE_USER);
+            ResultSet resultSet = statement.executeQuery();
+            while(resultSet.next()){
+                User lastFive = new User();
+                lastFive.setId(resultSet.getInt("id_user"));
+                lastFive.setUserName(resultSet.getString("username"));
+                lastFive.setEmail(resultSet.getString("email"));
+                lastFive.setPassword(resultSet.getString("password"));
+                lastFive.setGroupId(resultSet.getInt("user_group_id"));
+
+                lastFiveUserList.add(lastFive);
+            }
+        }catch (SQLException exc){
+            exc.printStackTrace();
+            return null;
+        }
+        return lastFiveUserList;
     }
 
 }
