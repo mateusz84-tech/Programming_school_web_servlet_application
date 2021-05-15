@@ -19,7 +19,10 @@ public class GroupDao {
             "UPDATE user_group SET name = ? WHERE id_group = ?";
     private final String DELETE_GROUP_QUERY =
             "DELETE FROM user_group WHERE id_group = ?";
-    private final String GET_ALL_GROUP = "SELECT * FROM user_group";
+    private final String GET_ALL_GROUP =
+            "SELECT * FROM user_group";
+    private final String GET_LAST_FIVE_GROUP =
+            "SELECT * FROM user_group ORDER BY id_group DESC LIMIT 5";
 
     public Group create(Group group){
         try(Connection connection = DBUtil.getConnection()){
@@ -95,5 +98,23 @@ public class GroupDao {
             exc.printStackTrace();
             return null;
         }
+    }
+    public List<Group> findFiveLastGroup(){
+        List<Group> lastFiveGroup = new ArrayList<>();
+        try(Connection connection = DBUtil.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(GET_LAST_FIVE_GROUP);
+            ResultSet resultSet = statement.executeQuery();
+            while(resultSet.next()){
+                Group groupFive = new Group();
+                groupFive.setId(resultSet.getInt("id_group"));
+                groupFive.setName(resultSet.getString("name"));
+
+                lastFiveGroup.add(groupFive);
+            }
+        }catch (SQLException exc){
+            exc.printStackTrace();
+            return null;
+        }
+        return lastFiveGroup;
     }
 }
