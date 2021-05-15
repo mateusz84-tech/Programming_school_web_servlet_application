@@ -22,6 +22,8 @@ public class ExerciseDao {
             "DELETE FROM exercise WHERE id_exercise = ?";
     private final String GET_ALL_EXERCISE =
             "SELECT * FROM exercise";
+    private final String GET_LAST_FIVE_EXERCISE_QUERY =
+            "SELECT * FROM exercise ORDER BY id_exercise DESC LIMIT 5";
 
     public Exercise create(Exercise exercise){
         try(Connection connection = DBUtil.getConnection()) {
@@ -99,5 +101,25 @@ public class ExerciseDao {
             exc.printStackTrace();
             return null;
         }
+    }
+
+    public List<Exercise> findLastFiveExercise(){
+        List<Exercise> lastFiveList = new ArrayList<>();
+        try(Connection connection = DBUtil.getConnection()){
+            PreparedStatement statement = connection.prepareStatement(GET_LAST_FIVE_EXERCISE_QUERY);
+            ResultSet resultSet = statement.executeQuery();
+            while(resultSet.next()){
+                Exercise exercise = new Exercise();
+                exercise.setId(resultSet.getInt("id_exercise"));
+                exercise.setTitle(resultSet.getString("title"));
+                exercise.setDescription(resultSet.getString("description"));
+
+                lastFiveList.add(exercise);
+            }
+        }catch (SQLException exc){
+            exc.printStackTrace();
+            return null;
+        }
+        return lastFiveList;
     }
 }
