@@ -6,9 +6,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ taglib prefix="for" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<html>
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
@@ -81,7 +80,7 @@
     <header>
         <img src="img/exercise.jpg">
         <nav>
-            <a href="#" class="menu">Dodaj</a>
+            <a href="${pageContext.request.contextPath}/view_exercise/addExercise.jsp" class="menu">Dodaj</a>
             <a href="#" class="menu">Edytuj</a>
             <a href="#" class="menu">Lista</a>
             <a href="#" class="menu">Usuń</a>
@@ -95,7 +94,7 @@
                 <th>Tytuł</th>
                 <th>Opis</th>
                 <th>Podgląd</th>
-                <c:forEach items="${exercise}" var="exercise" varStatus="stat">
+                <c:forEach items="${list}" var="exercise" varStatus="stat">
                 <tr>
                     <td>${stat.count}</td>
                     <td>${exercise.getTitle()}</td>
