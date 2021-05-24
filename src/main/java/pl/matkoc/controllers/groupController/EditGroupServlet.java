@@ -1,13 +1,11 @@
-package pl.matkoc.controllers.group;
+package pl.matkoc.controllers.groupController;
 
 import pl.matkoc.dao.GroupDao;
-import pl.matkoc.model.Group;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
-import java.util.List;
 
 @WebServlet(name = "EditGroupServlet", value = "/editGroup")
 public class EditGroupServlet extends HttpServlet {

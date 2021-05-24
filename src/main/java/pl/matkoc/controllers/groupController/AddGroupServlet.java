@@ -1,4 +1,4 @@
-package pl.matkoc.controllers.group;
+package pl.matkoc.controllers.groupController;
 
 import pl.matkoc.dao.GroupDao;
 import pl.matkoc.model.Group;

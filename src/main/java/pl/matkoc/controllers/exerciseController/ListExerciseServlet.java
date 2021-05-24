@@ -1,4 +1,4 @@
-package pl.matkoc.controllers.exercise;
+package pl.matkoc.controllers.exerciseController;
 
 import pl.matkoc.dao.ExerciseDao;
 import pl.matkoc.model.Exercise;
