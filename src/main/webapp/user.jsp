@@ -80,7 +80,7 @@
     <header>
         <img src="image/user.jpg" alt="user">
         <nav>
-            <a href="" class="menu">Dodaj</a>
+            <a href="${pageContext.request.contextPath}/view_user/addUser.jsp" class="menu">Dodaj</a>
             <a href="" class="menu">Edytuj</a>
             <a href="" class="menu">Lista</a>
             <a href="" class="menu">Usuń</a>
