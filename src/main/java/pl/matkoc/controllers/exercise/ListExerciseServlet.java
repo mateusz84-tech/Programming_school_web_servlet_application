@@ -19,7 +19,7 @@ public class ListExerciseServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
 
         ExerciseDao exerciseDao = new ExerciseDao();
-        List<Exercise> exerciseList = exerciseDao.findAll();
+        List<Exercise> exerciseList = exerciseDao.findLastFiveExercise();
         request.setAttribute("list", exerciseList);
         getServletContext().getRequestDispatcher("/exercise.jsp")
                 .forward(request,response);
