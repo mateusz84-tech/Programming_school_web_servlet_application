@@ -16,7 +16,7 @@ public class ListGroupServlet extends HttpServlet {
                          HttpServletResponse response) throws ServletException, IOException {
 
         GroupDao groupDao = new GroupDao();
-        List<Group> groupList = groupDao.findAll();
+        List<Group> groupList = groupDao.findFiveLastGroup();
         request.setAttribute("group", groupList);
         getServletContext().getRequestDispatcher("/group.jsp")
                 .forward(request, response);
