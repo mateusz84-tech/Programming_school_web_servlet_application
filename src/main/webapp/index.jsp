@@ -81,7 +81,7 @@
         <nav>
             <a href="${pageContext.request.contextPath}/groupList" class="menu">Grupy</a>
             <a href="${pageContext.request.contextPath}/exerciseList" class="menu">Zadania</a>
-            <a href="user.jsp" class="menu">Użytkownicy</a>
+            <a href="${pageContext.request.contextPath}/userList" class="menu">Użytkownicy</a>
             <a href="solution.jsp" class="menu">Rozwiązania</a>
         </nav>
     </header>
