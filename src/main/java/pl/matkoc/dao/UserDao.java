@@ -12,17 +12,17 @@ import java.util.List;
 public class UserDao {
 
     private final String CREATE_USER_QUERY =
-            "INSERT INTO users(username,email,password,user_group_id)VALUES(?,?,?,?)";
+            "INSERT INTO users(username,email,password,id_group)VALUES(?,?,?,?)";
     private final String READ_USER_QUERY =
             "SELECT * FROM users WHERE id_user = ?";
     private final String UPDATE_USER_QUERY =
-            "UPDATE users SET username = ?, email = ?, password = ?, user_group_id = ? WHERE id_user = ?";
+            "UPDATE users SET username = ?, email = ?, password = ?, id_group = ? WHERE id_user = ?";
     private final String DELETE_USER_QUERY =
             "DELETE FROM users WHERE id_user = ?";
     private final String FIND_ALL_USERS =
             "SELECT * FROM users";
     private final String FIND_ALL_USERS_BY_GROUP_ID =
-            "SELECT * FROM users WHERE user_group_id = ?";
+            "SELECT * FROM users WHERE id_group = ?";
     private final String GET_LAST_FIVE_USER =
             "SELECT * FROM users ORDER BY id_user DESC LIMIT 5";
 
@@ -59,7 +59,7 @@ public class UserDao {
                 user.setUserName(resultSet.getString("username"));
                 user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("password"));
-                user.setGroupId(resultSet.getInt("user_group_id"));
+                user.setGroupId(resultSet.getInt("id_group"));
                 user.setId(resultSet.getInt("id_user"));
             }
             return user;
@@ -108,7 +108,7 @@ public class UserDao {
                 user.setUserName(resultSet.getString("username"));
                 user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("password"));
-                user.setGroupId(resultSet.getInt("user_group_id"));
+                user.setGroupId(resultSet.getInt("id_group"));
 
                 userList.add(user);
             }
@@ -131,7 +131,7 @@ public class UserDao {
                 user.setUserName(resultSet.getString("username"));
                 user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("password"));
-                user.setGroupId(resultSet.getInt("user_group_id"));
+                user.setGroupId(resultSet.getInt("id_group"));
 
                 userList.add(user);
             }
@@ -153,7 +153,7 @@ public class UserDao {
                 lastFive.setUserName(resultSet.getString("username"));
                 lastFive.setEmail(resultSet.getString("email"));
                 lastFive.setPassword(resultSet.getString("password"));
-                lastFive.setGroupId(resultSet.getInt("user_group_id"));
+                lastFive.setGroupId(resultSet.getInt("id_group"));
 
                 lastFiveUserList.add(lastFive);
             }
