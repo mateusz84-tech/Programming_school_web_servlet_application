@@ -95,7 +95,7 @@
                 <th>Email</th>
                 <th>Id grupy</th>
                 <th>Podgląd</th>
-                <c:forEach items="${users}" var="user" varStatus="stat">
+                <c:forEach items="${list}" var="user" varStatus="stat">
                 <tr>
                     <td>${stat.count}</td>
                     <td>${user.getUserName()}</td>
