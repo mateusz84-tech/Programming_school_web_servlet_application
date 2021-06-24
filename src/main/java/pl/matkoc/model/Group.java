@@ -2,7 +2,7 @@ package pl.matkoc.model;
 
 public class Group {
 
-    private int id;
+    private int id_group;
     private String name;
 
     public Group() {};
@@ -15,14 +15,14 @@ public class Group {
     }
 
     public int getId() {
-        return id;
+        return id_group;
     }
 
-    public void setId(int id) {
-        if(id < 0){
+    public void setId(int id_group) {
+        if(id_group < 0){
             throw new IllegalArgumentException("Id nie może być mniejsze od zera.");
         }
-        this.id = id;
+        this.id_group = id_group;
     }
 
     public String getName() {

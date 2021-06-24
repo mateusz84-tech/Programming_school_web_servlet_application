@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 public class Solution {
 
-    private int id;
+    private int id_solution;
     private Timestamp created;
     private Timestamp updated;
     private String description;
@@ -37,14 +37,14 @@ public class Solution {
     }
 
     public int getId() {
-        return id;
+        return id_solution;
     }
 
-    public void setId(int id) {
-        if(id < 0){
+    public void setId(int id_solution) {
+        if(id_solution < 0){
             throw new IllegalArgumentException("Id nie może być mniejsze od zera.");
         }
-        this.id = id;
+        this.id_solution = id_solution;
     }
 
     public Timestamp getCreated() {

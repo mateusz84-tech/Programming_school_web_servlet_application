@@ -2,7 +2,7 @@ package pl.matkoc.model;
 
 public class Exercise {
 
-    private int id;
+    private int id_exercise;
     private String title;
     private String description;
 
@@ -20,14 +20,14 @@ public class Exercise {
     }
 
     public int getId() {
-        return id;
+        return id_exercise;
     }
 
-    public void setId(int id) {
-        if(id < 0){
+    public void setId(int id_exercise) {
+        if(id_exercise < 0){
             throw new IllegalArgumentException("Id nie może być mniejsze od zera.");
         }
-        this.id = id;
+        this.id_exercise = id_exercise;
     }
 
     public String getTitle() {

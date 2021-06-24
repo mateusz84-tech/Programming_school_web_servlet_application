@@ -4,7 +4,7 @@ import org.mindrot.jbcrypt.BCrypt;
 
 public class User {
 
-    private int id;
+    private int id_user;
     private String userName;
     private String email;
     private String password;
@@ -33,14 +33,14 @@ public class User {
     public User() {};
 
     public int getId() {
-        return id;
+        return id_user;
     }
 
-    public void setId(int id) {
-        if(id < 0){
+    public void setId(int id_user) {
+        if(id_user < 0){
             throw new IllegalArgumentException("Id nie może być mniesze od zera.");
         }
-        this.id = id;
+        this.id_user = id_user;
     }
 
     public String getUserName() {
